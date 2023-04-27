@@ -26,22 +26,24 @@
 <!-- Turbo !-->
 
 <!-- BACKREDIRECT !-->
-<script>
-        (function(b) {
+<script type="text/javascript">
+        (function (b) {
             var a = {
                 version: "0.0.1",
                 history_api: typeof history.pushState !== "undefined",
-                init: function() {
+                init: function () {
                     b.location.hash = "#no-back";
                     a.configure();
                 },
-                hasChanged: function() {
+ 
+                hasChanged: function () {
                     if (b.location.hash == "#no-back") {
                         b.location.hash = "#";
-                        b.location.href = "http://metodoparc.site/ofertaespecial"; //LINK PARA REDIRECIONAR AQUI
+                        b.location.href = "/ofertaespecial";
                     }
                 },
-                checkCompat: function() {
+ 
+                checkCompat: function () {
                     if (b.addEventListener) {
                         b.addEventListener("hashchange", a.hasChanged, false);
                     } else {
@@ -52,13 +54,14 @@
                         }
                     }
                 },
-                configure: function() {
+ 
+                configure: function () {
                     if (b.location.hash == "#no-back") {
                         if (this.history_api) {
                             history.pushState(null, "", "#");
                         } else {
                             b.location.hash = "#";
-                            b.location.href = "http://metodoparc.site/ofertaespecial"; //LINK PARA REDIRECIONAR AQUI
+                            b.location.href = "/ofertaespecial";
                         }
                     }
                     a.checkCompat();
@@ -66,7 +69,7 @@
                 }
             };
             if (typeof define === "function" && define.amd) {
-                define(function() {
+                define(function () {
                     return a;
                 });
             } else {
@@ -78,7 +81,7 @@
             }
             a.init();
         }(window));
-</script>
+    </script>
 <!-- BACKREDIRECT !-->
 	
 <!-- PIXEL AQUI !-->
